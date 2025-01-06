@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Report</title>
+</head>
+<body>
+    <h1>Your Results</h1>
+    <p>Score: {{ score }}</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Question</th>
+                <th>Your Answer</th>
+                <th>Correct Answer</th>
+                <th>Correct?</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for result in results %}
+                <tr>
+                    <td>{{ result.question }}</td>
+                    <td>{{ result.user_answer }}</td>
+                    <td>{{ result.correct_answer }}</td>
+                    <td>{{ 'Yes' if result.is_correct else 'No' }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="/">Go Home</a>
+</body>
+</html>

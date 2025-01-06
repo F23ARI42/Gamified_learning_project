@@ -1,0 +1,21 @@
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>Generated Questions</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    </head>
+    <body>
+        <h1>Generated Questions</h1>
+        <form method="POST">
+            <ul>
+                {% for question in questions %}
+                    <li>
+                        <label>{{ question }}</label>
+                        <input type="text" name="answer_{{ loop.index }}" placeholder="Your answer">
+                    </li>
+                {% endfor %}
+            </ul>
+            <button type="submit">Submit Answers</button>
+        </form>
+    </body>
+    </html>
